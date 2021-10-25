@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file target-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="3525385618386142589" datatype="html">
+        <source>Gustafson Wood Work</source>
+        <target>Trabajo de madera de Gustafson</target>
+        <context-group purpose="location">
+          <context context-type="targetfile">src/app/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">25,26</context>
+        </context-group>
+        <note priority="1" from="description">appTitle</note>
+      </trans-unit>
+      <trans-unit id="6574710269679413520" datatype="html">
+        <source> Accounts </source>
+        <target> Cuentas </target>
+        <context-group purpose="location">
+          <context context-type="targetfile">src/app/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">28,29</context>
+        </context-group>
+        <note priority="1" from="description">menuAccounts</note>
+      </trans-unit>
+      <trans-unit id="149974019994124409" datatype="html">
+        <source> Create Account </source>
+        <target>Crear una cuenta</target>
+        <context-group purpose="location">
+          <context context-type="targetfile">src/app/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">29,30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1806926773774368393" datatype="html">
+        <source> Contacts </source>
+        <target>Contactos</target>
+        <context-group purpose="location">
+          <context context-type="targetfile">src/app/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">30,31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8632397229402578432" datatype="html">
+        <source> Create Contact </source>
+        <target>Crear contacto</target>
+        <context-group purpose="location">
+          <context context-type="targetfile">src/app/main-nav/main-nav.component.html</context>
+          <context context-type="linenumber">31,32</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

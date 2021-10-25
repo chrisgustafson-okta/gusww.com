@@ -1,0 +1,40 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="false"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [ngClass]="{hidden: !(isHandset$ | async)}"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar >Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Link 1</a>
+      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <img src="/assets/img/simpleLogo_45h.png"/>
+      <span i18n="appTitle">Gustafson Wood Work</span>
+      <span class="menu-spacer"></span>
+    <div *ngIf="!(isHandset$ | async)">
+      <a mat-button [routerLink]="'/accounts'" i18n="menuAccounts"> Accounts </a>
+      <a mat-button [routerLink]="'/create-account'" i18n> Create Account </a>
+      <a mat-button [routerLink]="'/contacts'" i18n> Contacts </a>
+      <a mat-button [routerLink]="'/create-contact'" i18n> Create Contact </a>
+      <a mat-button [routerLink]="'/activities'" i18n> Activities </a>
+      <a mat-button [routerLink]="'/create-activity'"> Create Activity </a>
+     
+    </div>  
+    </mat-toolbar>
+    <ng-content></ng-content>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
