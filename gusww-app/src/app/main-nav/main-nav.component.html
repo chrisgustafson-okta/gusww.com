@@ -25,8 +25,10 @@
       <span i18n="appTitle">&nbsp;Gustafson Wood Works</span>
       <span class="menu-spacer"></span>
     <div *ngIf="!(isHandset$ | async)">
-      <a mat-button routerLink="/home-component" routerLinkActive="active" i18n="menuHome"> Home </a>      
-     
+      <a mat-button routerLink="/home" routerLinkActive="active" i18n="menuHome"> Home </a>      
+      <a mat-button routerLink="/about" routerLinkActive="active" i18n="menuAbout"> About Us </a>
+      <a mat-button routerLink="/influencer" routerLinkActive="active" i18n="menuInfluencer"> Influencers </a>
+      <a mat-button routerLink="/staff" routerLinkActive="active" i18n="menuStaff"> Staff </a>
     </div>  
     </mat-toolbar>    
     <!-- Add Content Here -->
