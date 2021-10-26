@@ -8,6 +8,7 @@ export class AuthService {
   constructor() { }
 
   isLoggedIn(): boolean {
-    return false;
+    //insert token logic here
+    return true;
   }
 }
