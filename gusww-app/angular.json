@@ -79,7 +79,8 @@
               "browserTarget": "gusww-app:build:production"
             },
             "development": {
-              "browserTarget": "gusww-app:build:development"
+              "browserTarget": "gusww-app:build:development",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"
