@@ -16,7 +16,7 @@ import { OktaAuth } from '@okta/okta-auth-js';
 const config = {
   issuer: 'https://auth.gusww-demo.com/oauth2/default',
   clientId: '0oa4we06joofEMUTx696',
-  redirectUri: '/login-callback',
+  redirectUri: 'http://localhost:4200/login-callback',
   scopes: ['openid', 'profile', 'email'],
   useInteractionCodeFlow: true
 }
