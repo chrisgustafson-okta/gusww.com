@@ -18,7 +18,7 @@ const config = {
   clientId: '0oa4we06joofEMUTx696',
   redirectUri: '/login-callback',
   scopes: ['openid', 'profile', 'email'],
-  pkce: true
+  useInteractionCodeFlow: true
 }
 const oktaAuth = new OktaAuth(config);
 import { AuthService } from './auth.service';
