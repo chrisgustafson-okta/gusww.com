@@ -14,11 +14,11 @@ import { OKTA_CONFIG, OktaAuthModule } from '@okta/okta-angular';
 import { OktaAuth } from '@okta/okta-auth-js';
 
 const config = {
-  issuer: 'https://auth.gusww-demo.com',
+  issuer: 'https://auth.gusww-demo.com/oauth2/default',
   clientId: '0oa4we06joofEMUTx696',
   redirectUri: '/login-callback',
   scopes: ['openid', 'profile', 'email'],
-  pkce: true  
+  pkce: true
 }
 const oktaAuth = new OktaAuth(config);
 import { AuthService } from './auth.service';
@@ -31,6 +31,7 @@ import { InfluencerComponent } from './influencer/influencer.component';
 import { StaffComponent } from './staff/staff.component';
 import { environment } from '../environments/environment';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,7 @@ import { environment } from '../environments/environment';
     HomeComponent,
     AboutComponent,
     InfluencerComponent,
-    StaffComponent
+    StaffComponent    
   ],
   imports: [
     MatSliderModule,

@@ -8,9 +8,9 @@ import { AuthGuard } from './auth.guard';
 import { OktaAuthGuard } from '@okta/okta-angular';
 import { OktaCallbackComponent } from '@okta/okta-angular';
 
-const routes: Routes = [  
-  { path: 'login-callback', component: OktaCallbackComponent },
+const routes: Routes = [   
   { path: '', component: HomeComponent },
+  { path: 'login-callback', component: OktaCallbackComponent },
   { path: 'about', component: AboutComponent },
   { path: 'influencer', component: InfluencerComponent, canActivate: [OktaAuthGuard]},
   { path: 'staff', component: StaffComponent, canActivate: [OktaAuthGuard]},  
