@@ -29,9 +29,27 @@
       <a mat-button routerLink="/about" routerLinkActive="active" i18n="menuAbout"> About Us </a>
       <a mat-button routerLink="/influencer" routerLinkActive="active" i18n="menuInfluencer"> Influencers </a>
       <a mat-button routerLink="/staff" routerLinkActive="active" i18n="menuStaff"> Staff </a>
+      
+      <button *ngIf="!(authStateService.authState$ | async)!.isAuthenticated" (click)="login()">Login</button>
+      <button *ngIf="(authStateService.authState$ | async)!.isAuthenticated" (click)="logout()">Logout</button>
+
     </div>  
     </mat-toolbar>    
     <!-- Add Content Here -->
+    <table class="ui table">
+      <thead>
+        <tr>
+          <th>Claim</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let claim of claims">
+          <td>{{claim.claim}}</td>
+          <td id="claim-{{claim.claim}}">{{claim.value}}</td>
+        </tr>
+      </tbody>
+    </table>
     <ng-content></ng-content>
   </mat-sidenav-content>
   
