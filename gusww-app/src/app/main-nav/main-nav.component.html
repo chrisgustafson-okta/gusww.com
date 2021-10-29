@@ -21,35 +21,41 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <img src="/assets/img/simpleLogo_wht_45h.png"/>
-      <span i18n="appTitle">&nbsp;Gustafson Wood Works</span>
-      <span class="menu-spacer"></span>
-    <div *ngIf="!(isHandset$ | async)">
-      <a mat-button routerLink="/home" routerLinkActive="active" i18n="menuHome"> Home </a>      
-      <a mat-button routerLink="/about" routerLinkActive="active" i18n="menuAbout"> About Us </a>
-      <a mat-button routerLink="/influencer" routerLinkActive="active" i18n="menuInfluencer"> Influencers </a>
-      <a mat-button routerLink="/staff" routerLinkActive="active" i18n="menuStaff"> Staff </a>
-      
-      <button *ngIf="!(authStateService.authState$ | async)!.isAuthenticated" (click)="login()">Login</button>
-      <button *ngIf="(authStateService.authState$ | async)!.isAuthenticated" (click)="logout()">Logout</button>
-
+      <img src="/assets/img/simpleLogo_45h.png"/>
+      <span i18n="appTitle">&nbsp;Gustafson Wood Works</span>      
+    <div *ngIf="!(isHandset$ | async)">      
+      <span>
+        <a mat-button routerLink="/home" routerLinkActive="active" i18n="menuHome"> Home </a>      
+        <a mat-button routerLink="/about" routerLinkActive="active" i18n="menuAbout"> About Us </a>
+        <a mat-button *ngIf="(authStateService.authState$ | async)!.isAuthenticated" routerLink="/influencer" routerLinkActive="active" i18n="menuInfluencer"> Influencers </a>
+        <a mat-button *ngIf="(authStateService.authState$ | async)!.isAuthenticated" routerLink="/staff" routerLinkActive="active" i18n="menuStaff"> Staff </a>
+      </span>
+      <span class="spacer"></span>
+      <span>
+        <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Item 1</button>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu>
+        <span *ngIf="(authStateService.authState$ | async)!.isAuthenticated">
+          <button  mat-button [matMenuTriggerFor]="menu">{{userData.getUser().userName}}</button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/profile">View Profile</button>
+            <button mat-menu-item i18n="menuSignOut" (click)="logout()">SignOut</button>
+          </mat-menu>
+        </span>
+        <button *ngIf="!(authStateService.authState$ | async)!.isAuthenticated" (click)="login()">Login</button>
+        <button *ngIf="(authStateService.authState$ | async)!.isAuthenticated" (click)="logout()">Logout</button>
+      </span>
     </div>  
-    </mat-toolbar>    
-    <!-- Add Content Here -->
-    <table class="ui table">
-      <thead>
-        <tr>
-          <th>Claim</th>
-          <th>Value</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let claim of claims">
+    </mat-toolbar>       
+   <!--Add Content Here -->
+   
+        <!--<tr *ngFor="let claim of userFactory.getClaims">
           <td>{{claim.claim}}</td>
           <td id="claim-{{claim.claim}}">{{claim.value}}</td>
-        </tr>
-      </tbody>
-    </table>
+        </tr>-->
+   
     <ng-content></ng-content>
   </mat-sidenav-content>
   

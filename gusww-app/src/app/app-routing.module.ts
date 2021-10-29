@@ -7,6 +7,7 @@ import { StaffComponent } from './staff/staff.component';
 import { AuthGuard } from './auth.guard';
 import { OktaAuthGuard } from '@okta/okta-angular';
 import { OktaCallbackComponent } from '@okta/okta-angular';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [   
   { path: '', component: HomeComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'influencer', component: InfluencerComponent, canActivate: [OktaAuthGuard]},
   { path: 'staff', component: StaffComponent, canActivate: [OktaAuthGuard]},  
+  { path: 'profile', component: ProfileComponent, canActivate: [OktaAuthGuard]},  
 ];
 
 @NgModule({

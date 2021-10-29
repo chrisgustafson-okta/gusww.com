@@ -30,6 +30,10 @@ import { AboutComponent } from './about/about.component';
 import { InfluencerComponent } from './influencer/influencer.component';
 import { StaffComponent } from './staff/staff.component';
 import { environment } from '../environments/environment';
+import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from './shared/modules/material/material.module';
+import { ProfileComponent } from './profile/profile.component';
+import { UserDataService } from './shared/services/user-data.service';
 
 
 @NgModule({
@@ -39,7 +43,8 @@ import { environment } from '../environments/environment';
     HomeComponent,
     AboutComponent,
     InfluencerComponent,
-    StaffComponent    
+    StaffComponent,
+    ProfileComponent    
   ],
   imports: [
     MatSliderModule,
@@ -52,12 +57,15 @@ import { environment } from '../environments/environment';
     MatSidenavModule,
     MatIconModule,
     MatListModule,   
-    OktaAuthModule 
+    OktaAuthModule,
+    HttpClientModule,
+    MaterialModule    
   ],
   providers: [AuthService, { 
     provide: OKTA_CONFIG, 
-    useValue: { oktaAuth } ,    
+    useValue: { oktaAuth },    
   },
+  UserDataService,
   { provide: APP_BASE_HREF, useValue: environment.appBaseHref },],
   bootstrap: [AppComponent]
 })
