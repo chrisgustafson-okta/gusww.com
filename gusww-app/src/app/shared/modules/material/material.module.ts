@@ -5,6 +5,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 const materialModules = [
   MatIconModule
 ];
@@ -21,7 +23,9 @@ MatIconModule,
 MatMenuModule,
 MatToolbarModule,
 MatTabsModule,
-MatTableModule
+MatTableModule,
+MatCardModule,
+MatButtonModule
   ]
 })
 export class MaterialModule { }
