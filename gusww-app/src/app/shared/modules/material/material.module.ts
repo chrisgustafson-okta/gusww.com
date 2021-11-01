@@ -7,6 +7,10 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 const materialModules = [
   MatIconModule
 ];
@@ -25,7 +29,14 @@ MatToolbarModule,
 MatTabsModule,
 MatTableModule,
 MatCardModule,
-MatButtonModule
+MatButtonModule,
+MatGridListModule,
+MatSliderModule,
+MatToolbarModule,
+MatButtonModule,
+MatSidenavModule,
+MatIconModule,
+MatListModule
   ]
 })
 export class MaterialModule { }

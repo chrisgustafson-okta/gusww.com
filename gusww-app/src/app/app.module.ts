@@ -3,13 +3,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule } from '@angular/material/slider';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
 import { OKTA_CONFIG, OktaAuthModule } from '@okta/okta-angular';
 import { OktaAuth } from '@okta/okta-auth-js';
 
@@ -34,6 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './shared/modules/material/material.module';
 import { ProfileComponent } from './profile/profile.component';
 import { UserDataService } from './shared/services/user-data.service';
+import { CatalogComponent } from './catalog/catalog.component';
+
 
 
 @NgModule({
@@ -44,19 +40,15 @@ import { UserDataService } from './shared/services/user-data.service';
     AboutComponent,
     InfluencerComponent,
     StaffComponent,
-    ProfileComponent    
+    ProfileComponent,
+    CatalogComponent,
+        
   ],
-  imports: [
-    MatSliderModule,
+  imports: [    
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,   
+    LayoutModule,    
     OktaAuthModule,
     HttpClientModule,
     MaterialModule    

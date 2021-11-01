@@ -25,7 +25,11 @@
       <span i18n="appTitle">&nbsp;Gustafson Wood Works</span>      
     <div *ngIf="!(isHandset$ | async)">      
       <span>
-        <a mat-button routerLink="/home" routerLinkActive="active" i18n="menuHome"> Home </a>      
+        <a mat-button routerLink="/home" routerLinkActive="active" i18n="menuHome"> Home </a>   
+        <button  mat-button [matMenuTriggerFor]="menu">Services</button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/catalog" i18n>Catalog</button>
+          </mat-menu>                   
         <a mat-button routerLink="/about" routerLinkActive="active" i18n="menuAbout"> About Us </a>
         <a mat-button *ngIf="(authStateService.authState$ | async)!.isAuthenticated" routerLink="/influencer" routerLinkActive="active" i18n="menuInfluencer"> Influencers </a>
         <a mat-button *ngIf="(authStateService.authState$ | async)!.isAuthenticated" routerLink="/staff" routerLinkActive="active" i18n="menuStaff"> Staff </a>
@@ -41,18 +45,12 @@
           </mat-menu>
         </span>
      
-        <button mat-button color="accent" *ngIf="!(authStateService.authState$ | async)!.isAuthenticated" (click)="login()">Login</button>
+        <button mat-button color="basic" *ngIf="!(authStateService.authState$ | async)!.isAuthenticated" (click)="login()">Login</button>
      
       </span>
     </div>  
     </mat-toolbar>       
-   <!--Add Content Here -->
-   
-        <!--<tr *ngFor="let claim of userFactory.getClaims">
-          <td>{{claim.claim}}</td>
-          <td id="claim-{{claim.claim}}">{{claim.value}}</td>
-        </tr>-->
-   
+  
     <ng-content></ng-content>
   </mat-sidenav-content>
   
