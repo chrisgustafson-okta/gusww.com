@@ -38,14 +38,14 @@
       <span>       
         <span *ngIf="(authStateService.authState$ | async)!.isAuthenticated">
           
-          <button  mat-button [matMenuTriggerFor]="menu">{{userData.getUser().userName}}</button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item routerLink="/profile">View Profile</button>
+          <button  mat-button [matMenuTriggerFor]="menu">{{userData.getUser().userName}}&nbsp;<mat-icon>account_circle</mat-icon></button>
+          <mat-menu #menu="matMenu">            
+            <button mat-menu-item routerLink="/profile">{{userData.getUser().userName}}'s Profile</button>
             <button mat-menu-item i18n="menuSignOut" (click)="logout()">Sign Out</button>
           </mat-menu>
         </span>
      
-        <button mat-button color="basic" *ngIf="!(authStateService.authState$ | async)!.isAuthenticated" (click)="login()">Login</button>
+        <button mat-button color="basic" *ngIf="!(authStateService.authState$ | async)!.isAuthenticated" (click)="login()">Login&nbsp;<mat-icon>login</mat-icon></button>
      
       </span>
     </div>  

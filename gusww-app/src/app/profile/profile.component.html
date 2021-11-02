@@ -1,8 +1,8 @@
 <h2>{{userData.getUser().userName}}</h2>
 <mat-tab-group>
     <mat-tab i18n-label="menuClaims" label="Claims">
-      <h3 i18n>Your Claims</h3>
-     
+      <h3 i18n>Your Claims&nbsp;<mat-icon>info</mat-icon></h3>
+      <mat-card class="token-card">
       <table mat-table [dataSource]="userData.getClaims()" class="mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order.
@@ -23,17 +23,28 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
-
+    </mat-card>
     </mat-tab>
 
 
     <mat-tab i18n-label="menuAccessToken" label="Access Token">
-      <h3>Access Token</h3>
-      <pre>{{userData.getAccessToken() | json}}</pre>
+         
+      <mat-card class="token-card">
+        <mat-card-title i18n>Access Token&nbsp;<mat-icon>token</mat-icon></mat-card-title>
+        <mat-card-subtitle i18n></mat-card-subtitle>
+        <mat-card-content>     
+          <pre>{{userData.getAccessToken() | json}}</pre>
+        </mat-card-content>        
+      </mat-card>
       
     </mat-tab>
     <mat-tab i18n-label="menuIdToken" label="ID Token">
-        <h3>Id Token</h3>
-      <pre>{{userData.getIdToken() | json}}</pre>
+      <mat-card class="token-card">
+        <mat-card-title i18n>Id Token&nbsp;<mat-icon>token</mat-icon></mat-card-title>
+        <mat-card-subtitle i18n></mat-card-subtitle>
+        <mat-card-content>     
+          <pre>{{userData.getIdToken() | json}}</pre>
+        </mat-card-content>        
+      </mat-card>
       </mat-tab>
   </mat-tab-group>
