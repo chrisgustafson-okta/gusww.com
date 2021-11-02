@@ -9,6 +9,7 @@ import { OktaAuthGuard } from '@okta/okta-angular';
 import { OktaCallbackComponent } from '@okta/okta-angular';
 import { ProfileComponent } from './profile/profile.component';
 import { CatalogComponent } from './catalog/catalog.component';
+import { SupplierComponent } from './supplier/supplier.component';
 
 const routes: Routes = [   
   { path: '', component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'staff', component: StaffComponent, canActivate: [OktaAuthGuard]},  
   { path: 'profile', component: ProfileComponent, canActivate: [OktaAuthGuard]},  
   { path: 'catalog', component: CatalogComponent, canActivate: [OktaAuthGuard]},  
+  { path: 'supplier', component: SupplierComponent, canActivate: [OktaAuthGuard]},  
 ];
 
 @NgModule({

@@ -29,6 +29,7 @@ import { MaterialModule } from './shared/modules/material/material.module';
 import { ProfileComponent } from './profile/profile.component';
 import { UserDataService } from './shared/services/user-data.service';
 import { CatalogComponent } from './catalog/catalog.component';
+import { SupplierComponent } from './supplier/supplier.component';
 
 
 
@@ -42,6 +43,7 @@ import { CatalogComponent } from './catalog/catalog.component';
     StaffComponent,
     ProfileComponent,
     CatalogComponent,
+    SupplierComponent,
         
   ],
   imports: [    

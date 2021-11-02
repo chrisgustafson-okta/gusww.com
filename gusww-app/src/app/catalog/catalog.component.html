@@ -23,8 +23,9 @@
         <td mat-cell  *matCellDef="">
           <button   [matMenuTriggerFor]="menu" mat-icon-button> <mat-icon>more_vert</mat-icon></button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item *oktaHasAnyGroup="{ 'OpsGroups': ['ops_influencer','ops_marcom'] }" >View Promo Script</button>
-            <button mat-menu-item *oktaHasAnyGroup="{ 'OpsGroups': ['ops_marcom'] }"  >Promotion Analytics</button>
+            <button mat-menu-item *oktaHasAnyGroup="{ 'OpsGroups': ['ops_influencer','ops_marcom', 'ops_staff'] }" >View Promo Script</button>
+            <button mat-menu-item *oktaHasAnyGroup="{ 'OpsGroups': ['ops_marcom','ops_staff'] }"  >Promotion Analytics</button>
+            <button mat-menu-item *oktaHasAnyGroup="{ 'OpsGroups': ['ops_marcom','ops_staff'] }"  >Promotion Maintenance</button>
           </mat-menu>
 
         </td>
