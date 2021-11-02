@@ -16,19 +16,21 @@
       <td mat-cell *matCellDef="let element"> {{element.description}} </td>
     </ng-container>
 
-    <!-- Rating Column -->
-    <ng-container matColumnDef="rating">
-        <th mat-header-cell *matHeaderCellDef i18n> Rating </th>
-        <td mat-cell *matCellDef="let element"> {{element.rating}}
-                    </td>
-      </ng-container>
+    <!-- Market Column -->
+    
+    <ng-container matColumnDef="market" >
+        <th mat-header-cell *matHeaderCellDef i18n> <span *oktaHasAnyGroup="hasMarketCapability">Market</span> </th>
+        <td mat-cell  *matCellDef="">
+          <button   [matMenuTriggerFor]="menu" mat-icon-button> <mat-icon>more_vert</mat-icon></button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item *oktaHasAnyGroup="{ 'OpsGroups': ['ops_influencer','ops_marcom'] }" >View Promo Script</button>
+            <button mat-menu-item *oktaHasAnyGroup="{ 'OpsGroups': ['ops_marcom'] }"  >Promotion Analytics</button>
+          </mat-menu>
 
-    <!-- Rating Column -->
-    <ng-container matColumnDef="market">
-        <th mat-header-cell *matHeaderCellDef i18n> Market </th>
-        <td mat-cell  *matCellDef=""> Secured </td>
-      </ng-container>
+        </td>
         
+      </ng-container>
+  
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>

@@ -11,7 +11,7 @@ const config = {
   issuer: 'https://auth.gusww-demo.com/oauth2/default',
   clientId: '0oa4we06joofEMUTx696',
   redirectUri: 'http://localhost:4200/login-callback',
-  scopes: ['openid', 'profile', 'email'],
+  scopes: ['openid', 'profile', 'email', 'ops'],
   useInteractionCodeFlow: true
 }
 const oktaAuth = new OktaAuth(config);

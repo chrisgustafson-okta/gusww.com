@@ -31,8 +31,8 @@
             <button mat-menu-item routerLink="/catalog" i18n>Catalog</button>
           </mat-menu>                   
         <a mat-button routerLink="/about" routerLinkActive="active" i18n="menuAbout"> About Us </a>
-        <a mat-button *ngIf="(authStateService.authState$ | async)!.isAuthenticated" routerLink="/influencer" routerLinkActive="active" i18n="menuInfluencer"> Influencers </a>
-        <a mat-button *ngIf="(authStateService.authState$ | async)!.isAuthenticated" routerLink="/staff" routerLinkActive="active" i18n="menuStaff"> Staff </a>
+        <a mat-button *oktaHasAnyGroup="{ 'OpsGroups': ['ops_influencer'] }" routerLink="/influencer" routerLinkActive="active" i18n="menuInfluencer"> Influencers </a>
+        <a mat-button *oktaHasAnyGroup="{ 'OpsGroups': ['ops_staff'] }"  routerLink="/staff" routerLinkActive="active" i18n="menuStaff"> Staff </a>
       </span>
       <span class="spacer"></span>
       <span>       
@@ -50,7 +50,7 @@
       </span>
     </div>  
     </mat-toolbar>       
-  
+ 
     <ng-content></ng-content>
   </mat-sidenav-content>
   

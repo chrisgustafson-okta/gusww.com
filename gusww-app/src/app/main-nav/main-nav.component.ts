@@ -23,7 +23,7 @@ export class MainNavComponent {
   constructor(private breakpointObserver: BreakpointObserver,  public authStateService: OktaAuthStateService,  public oktaAuth: OktaAuth, public userData: UserDataService) {}
 
   async ngOnInit() {    
-    
+    this.authStateService.hasAnyGroups("{OpsGroups: ['ops_influencer']}")
   }
   
   async login() {
