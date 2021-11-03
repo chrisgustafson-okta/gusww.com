@@ -42,15 +42,16 @@
       <span>
         <a mat-button routerLink="/home" routerLinkActive="active" i18n="menuHome"> Home </a>   
         <a mat-button routerLink="/about" routerLinkActive="active" i18n="menuAbout"> About Us </a>
+        <span *ngIf="(authStateService.authState$ | async)!.isAuthenticated">
         <button  mat-button [matMenuTriggerFor]="menu">Services&nbsp;<mat-icon>expand_circle_down</mat-icon></button>
           <mat-menu #menu="matMenu">
             <button mat-menu-item routerLink="/catalog" i18n>Catalog</button>
-          </mat-menu>                   
+          </mat-menu>    
+        </span>               
         <a mat-button *oktaHasAnyGroup="{ 'OpsGroups': ['ops_influencer', 'ops_staff'] }" routerLink="/influencer" routerLinkActive="active" i18n="menuInfluencer"> Influencers </a>        
         <a mat-button *oktaHasAnyGroup="{ 'OpsGroups': ['ops_supplier', 'ops_staff'] }" routerLink="/supplier" routerLinkActive="active" i18n="menuSupplier"> Suppliers </a>        
-      </span>
-      <span class="spacer"></span>
-      <span>       
+     
+         
         <span *ngIf="(authStateService.authState$ | async)!.isAuthenticated">
           
           <button  mat-button [matMenuTriggerFor]="menu">{{userData.getUser().userName}}&nbsp;<mat-icon>expand_circle_down</mat-icon></button>
