@@ -1,4 +1,16 @@
-.mat-grid-tile .mat-figure {
-  justify-content: flex-start !important ;
-  align-items: flex-start !important;
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  flex-grow: 1;
+  flex-basis: 300px;
+  margin: 10px;
+}
+.item:empty {
+  height: 0;
+}
+.example-card {
+  min-height: 600px;
 }
