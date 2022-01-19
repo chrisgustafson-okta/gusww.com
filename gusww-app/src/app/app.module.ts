@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { OKTA_CONFIG, OktaAuthModule } from '@okta/okta-angular';
 import { OktaAuth } from '@okta/okta-auth-js';
+//const { CLIENT_ID, ISSUER, OKTA_TESTING_DISABLEHTTPSCHECK } = process.env;
 
 const config = {
   issuer: 'https://auth.gusww-demo.com/oauth2/default',
@@ -14,6 +15,13 @@ const config = {
   scopes: ['openid', 'profile', 'email', 'ops'],
   useInteractionCodeFlow: true
 }
+/*const config = {
+  clientId: `${CLIENT_ID}`,
+  issuer: `${ISSUER}`,
+  redirectUri: '/login-callback',
+  scopes: ['openid', 'profile', 'email', 'ops'],
+  useInteractionCodeFlow: true
+}*/
 const oktaAuth = new OktaAuth(config);
 import { AuthService } from './auth.service';
 
